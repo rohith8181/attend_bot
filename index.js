@@ -6,6 +6,7 @@ const cron = require('node-cron');
 const PORT = process.env.PORT || 5000
 
 const autoattend = async () => {
+    console.log("Scheduled function started...")
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
@@ -43,6 +44,7 @@ const autoattend = async () => {
 
     await page.click(attendselector);
 
+    console.log("Scheduled Function Ended...")
     await browser.close();
 }
 
