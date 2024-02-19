@@ -13,12 +13,12 @@ const autoattend = async () => {
 
     const userselector = 'input[type="text"][name="log"]';
     await page.waitForSelector(userselector);
-    await page.type(userselector, 'rohithperala81@gmail.com')
+    await page.type(userselector, process.env.USER_NAME)
 
 
     const passselector = 'input[type="password"][name="pwd"]';
     await page.waitForSelector(passselector);
-    await page.type(passselector, '23370')
+    await page.type(passselector, process.env.PASSWORD)
 
     const subselctor = 'button[type="submit"]';
     await page.waitForSelector(subselctor);
